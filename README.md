@@ -1,2 +1,3 @@
 # winutils
-core utilities linux users crave, but are stuck in windows.
+Utilities for the semi-power user on windows.
+Linux users will appreciate some of the content.
