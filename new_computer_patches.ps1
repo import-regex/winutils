@@ -235,11 +235,6 @@ if (Test-Path $sRGBProfile) {
     # Force the system to apply the new color profile
     Write-Host "Forcing system to update display settings..."
     rundll32.exe shell32.dll,Control_RunDLL colorcpl.cpl
-
-    # Reboot to apply changes
-    Write-Host "Rebooting system in 10 seconds..."
-    Start-Sleep -Seconds 10
-    Restart-Computer -Force
 } else {
     Write-Host "sRGB ICC profile not found. Please ensure it exists at $sRGBProfile" -ForegroundColor Red
 }
@@ -288,6 +283,7 @@ New-ItemProperty -Path $regPath -Name 'NoLockScreen' -Value 1 -PropertyType DWor
 
 powercfg /SETDCVALUEINDEX SCHEME_CURRENT SUB_NONE CONSOLELOCK 0
 powercfg /SETACVALUEINDEX SCHEME_CURRENT SUB_NONE CONSOLELOCK 0
+
 
 
 
